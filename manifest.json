@@ -1,0 +1,85 @@
+{
+  "action": {
+    "default_icon": {
+      "128": "logo128.png",
+      "16": "logo16mono.png",
+      "48": "logo48.png"
+    },
+    "default_title": "Securly Classroom"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "exclude_matches": [
+        "*://richmondlp.com/*",
+        "*://*.eschooldata.com/*",
+        "*://*.arbitersports.com/*"
+      ],
+      "js": [
+        "cs.js"
+      ],
+      "match_about_blank": true,
+      "match_origin_as_fallback": true,
+      "matches": [
+        "\u003Call_urls\u003E"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "host_permissions": [
+    "\u003Call_urls\u003E",
+    "*://*/*"
+  ],
+  "icons": {
+    "128": "logo128.png",
+    "16": "logo16mono.png",
+    "48": "logo48.png"
+  },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuG+tf4hVUABclvk7dx0Bu7qNZb4hVZNSCn+E0gGqloYmL12TQWrt4/nBNqFf/oyg8+E8sTZzlt4lrF8150a5ZC8usMI5sq4yhKZgLHLXlx/hQhcLvPtgqCj+oFpAxLKmgO59+B47lWgpp1ctN8CedUJbFOmnIaIV/4lhfQbLpiB2OfrIi3k22x1MoIuneoQPKx7ddYEPeVhra6ifoi35pjh3o1xkVNdGA57jNCOhNzE2WocqRO1pkCvYe1skQXyoR0sLqWVpcpaPgClhifmP1Sm4RfVpmYJdPWQn0RcZGQWiKo6GawV5QwwruW2xn4xlzWG53+rTipLPrk4+o/M2WQIDAQAB",
+  "manifest_version": 3,
+  "minimum_chrome_version": "88.0.4324",
+  "name": "Securly Classroom",
+  "permissions": [
+    "activeTab",
+    "alarms",
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess",
+    "enterprise.deviceAttributes",
+    "gcm",
+    "geolocation",
+    "identity",
+    "identity.email",
+    "idle",
+    "nativeMessaging",
+    "notifications",
+    "offscreen",
+    "scripting",
+    "storage",
+    "webRequest"
+  ],
+  "short_name": "Securly",
+  "update_url": "https://deviceconsole.securly.com/dist/chrome/n.xml",
+  "version": "1.36.1",
+  "web_accessible_resources": [
+    {
+      "extension_ids": [
+        "ffndjmfjhjdamkocbfonjmoaecaflhga",
+        "ljbaelmjoebdeieggdgiaaapncdicekm",
+        "kgbbkfikebgafcfjgpdflkcoihjjlfmd",
+        "jfbecfmiegcjddenjhlbhlikcbfmnafd"
+      ],
+      "matches": [
+        "\u003Call_urls\u003E"
+      ],
+      "resources": [
+        "*",
+        "blocking/*",
+        "fonts/*"
+      ]
+    }
+  ]
+}
